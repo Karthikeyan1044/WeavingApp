@@ -56,6 +56,7 @@ namespace Maja
 
             services.AddTransient<IStudentService, StudentSevice>();
             services.AddTransient<IStudentRepo, StudentRepo>();
+            services.AddLocalization(options => options.ResourcesPath = "Resource folder");
 
             services.AddSwaggerGen(context =>
             {

@@ -288,14 +288,16 @@ namespace ApiCall.Controllers
 
             if (result.Status)
             {
-                return Ok(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.NomineeUpdated), true, StatusCodes.Status200OK, result.Data));
+                return Ok(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.DataDelete), true, StatusCodes.Status200OK, result.Data));
             }
             else
             {
+
                 if (result.MessageKey == CommonResource.DataNotFound)
                 {
                     return NotFound(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.DataNotFound), false, StatusCodes.Status404NotFound, null));
                 }
+
                 return Conflict(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.DataNotDelete), false, StatusCodes.Status409Conflict, null));
             }
         }
@@ -536,15 +538,15 @@ namespace ApiCall.Controllers
             Logger.LogInformation("GetNativeDetails : Method End");
             if (result.Status)
             {
-                if (result.MessageKey == CommonResource.DataNotFound)
-                {
-                    return Ok(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.DataNotFound), true, StatusCodes.Status204NoContent, null));
-                }
-                else
+                if (result.MessageKey == CommonResource.DataFound)
                 {
                     return Ok(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.DataFound), true, StatusCodes.Status200OK, result.Data));
                 }
+
+                return NotFound(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.DataNotFound), true, StatusCodes.Status204NoContent, null));
+
             }
+
             return Conflict(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.UnableToGetData), result.Status, StatusCodes.Status409Conflict, null));
         }
 
@@ -629,10 +631,9 @@ namespace ApiCall.Controllers
             {
                 return Ok(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.DataInsert), result.Status, StatusCodes.Status200OK, result.Data));
             }
-            else
-            {
-                return Conflict(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.DataNotInsert), result.Status, StatusCodes.Status409Conflict, null));
-            }
+            
+            return Conflict(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.DataNotInsert), result.Status, StatusCodes.Status409Conflict, null));
+             
         }
 
         /// <summary>

@@ -65,7 +65,7 @@ namespace Module.Repository
                 if (studentViewModels.Count <= 0)
                 {
                     _logger.LogError("GetAllStudent Data Not Available.. ");
-                    return new MessageViewModel(CommonResource.DataNotFound, false);
+                    return new MessageViewModel(CommonResource.DataNotFound, true);
                 };
 
                 _logger.LogInformation("GetAllStudent Data Available.. ");
@@ -76,7 +76,7 @@ namespace Module.Repository
             catch (Exception ex)
             {
                 _logger.LogError("GetAllStudent Exception :" + ex.Message);
-                return new MessageViewModel(CommonResource.DataNotFound, false);
+                return new MessageViewModel(CommonResource.UnableToGetData, false);
             }
         }
 
@@ -95,7 +95,7 @@ namespace Module.Repository
                 if (Data.Count <= 0)
                 {
                     _logger.LogError("GetDepartment Data Not Available.. ");
-                    return new MessageViewModel(CommonResource.DataNotFound, false);
+                    return new MessageViewModel(CommonResource.DataNotFound, true);
                 };
 
                 _logger.LogInformation("GetDepartment Data Available.. ");
@@ -106,7 +106,7 @@ namespace Module.Repository
             catch (Exception ex)
             {
                 _logger.LogError("GetDepartment Exception :" + ex.Message);
-                return new MessageViewModel(CommonResource.DataNotFound, false);
+                return new MessageViewModel(CommonResource.UnableToGetData, false);
             }
         }
 
@@ -120,12 +120,12 @@ namespace Module.Repository
             {
                 _logger.LogInformation("GetGender : Method Start");
 
-                List<gender> Data = await _dbContext.Gender.Where(l => l.isActive).Select(k => new gender { Id = k.Id, Name = k.Name }).ToListAsync();
+                var Data = await _dbContext.Gender.Where(l => l.isActive).Select(k => new gender { Id = k.Id, Name = k.Name }).ToListAsync();
 
                 if (Data.Count <= 0)
                 {
                     _logger.LogError("GetGender Data Not Available.. ");
-                    return new MessageViewModel(CommonResource.DataNotFound, false);
+                    return new MessageViewModel(CommonResource.DataNotFound, true);
                 };
 
                 _logger.LogInformation("GetGender Data Available.. ");
@@ -136,7 +136,7 @@ namespace Module.Repository
             catch (Exception ex)
             {
                 _logger.LogError("GetGender Exception :" + ex.Message);
-                return new MessageViewModel(CommonResource.DataNotFound, false);
+                return new MessageViewModel(CommonResource.UnableToGetData, false);
             }
         }
 
@@ -150,12 +150,12 @@ namespace Module.Repository
             {
                 _logger.LogInformation("GetPositionapplied : Method Start");
 
-                List<positionapplied> Data = await _dbContext.Positionapplied.Where(l => l.isActive).Select(k => new positionapplied { Id = k.Id, Name = k.Name }).ToListAsync();
+                var Data = await _dbContext.Positionapplied.Where(l => l.isActive).Select(k => new positionapplied { Id = k.Id, Name = k.Name }).ToListAsync();
 
                 if (Data.Count <= 0)
                 {
                     _logger.LogError("GetPositionapplied Data Not Available.. ");
-                    return new MessageViewModel(CommonResource.DataNotFound, false);
+                    return new MessageViewModel(CommonResource.DataNotFound, true);
                 };
 
                 _logger.LogInformation("GetPositionapplied Data Available.. ");
@@ -166,7 +166,7 @@ namespace Module.Repository
             catch (Exception ex)
             {
                 _logger.LogError("GetPositionapplied Exception :" + ex.Message);
-                return new MessageViewModel(CommonResource.DataNotFound, false);
+                return new MessageViewModel(CommonResource.UnableToGetData, false);
             }
         }
 
@@ -198,14 +198,22 @@ namespace Module.Repository
                 _dbContext.StudentDetails.Add(sf);
                 _dbContext.SaveChanges();
 
-                _logger.LogInformation("Data Inserted");
+                if(sf != null)
+                {
+                    _logger.LogInformation("Data Inserted");
+                    _logger.LogInformation("InsertStudentDetails : Method End");
+                    return new MessageViewModel(CommonResource.DataInsert, true);
+                }
+
+                _logger.LogInformation("Data Not Inserted");
                 _logger.LogInformation("InsertStudentDetails : Method End");
-                return new MessageViewModel(CommonResource.DataInsert, true);
+                return new MessageViewModel(CommonResource.DataNotInsert, true);
+
             }
             catch (Exception ex)
             {
                 _logger.LogError("InsertStudentDetails Exception :" + ex.Message);
-                return new MessageViewModel(CommonResource.DataNotInsert, false);
+                return new MessageViewModel(CommonResource.UnableToGetData, false);
             }
         }
 
@@ -581,7 +589,7 @@ namespace Module.Repository
             {
                _logger.LogInformation("DeleteStudent : Method Start");
 
-                var sf = _dbContext.StudentDetails.FirstOrDefault(item => item.Id == id);
+                var sf = _dbContext.StudentDetails.FirstOrDefault(item => item.Id == id && item.isActive);
 
                 if (sf == null)
                 {
@@ -856,7 +864,7 @@ namespace Module.Repository
                 if (nativeDetails.Count <= 0)
                 {
                     _logger.LogError("GetNativeDetails Data Not Available.. ");
-                    return new MessageViewModel(CommonResource.DataNotFound, false);
+                    return new MessageViewModel(CommonResource.DataNotFound, true);
                 };
 
                 _logger.LogInformation("GetNativeDetails Data Available.. ");
@@ -887,7 +895,7 @@ namespace Module.Repository
                 if (streetDetails.Count <= 0)
                 {
                     _logger.LogError("GetStreetDetails Data Not Available.. ");
-                    return new MessageViewModel(CommonResource.DataNotFound, false);
+                    return new MessageViewModel(CommonResource.DataNotFound, true);
                 };
 
                 _logger.LogInformation("GetStreetDetails Data Available.. ");
@@ -1023,17 +1031,17 @@ namespace Module.Repository
             {
                 _logger.LogInformation("DeleteEmployes : Method Start");
 
-                var em = _dbContext.EmployeeManagements.FirstOrDefault(item => item.Id == id);
+                var emp = _dbContext.EmployeeManagements.FirstOrDefault(item => item.Id == id && item.isActive);
 
-                if (em == null)
+                if (emp == null)
                 {
                     _logger.LogError("The User Not Exist");
                     return new MessageViewModel(CommonResource.DataNotFound, false);
                 }
-                    em.isActive = false;
-                    em.DeletedBy = 1;
-                    em.DeletedAt = DateTime.Now;
-                    _dbContext.EmployeeManagements.Update(em);
+                    emp.isActive = false;
+                    emp.DeletedBy = 1;
+                    emp.DeletedAt = DateTime.Now; 
+                    _dbContext.EmployeeManagements.Update(emp);
                     await _dbContext.SaveChangesAsync();
 
                     _logger.LogInformation("Data Deleted");
@@ -1043,7 +1051,7 @@ namespace Module.Repository
 
                 }
             catch (Exception ex)
-            {
+            { 
                 _logger.LogError("DeleteEmployes Exception :" + ex.Message);
                 return new MessageViewModel(CommonResource.DataNotDelete, false);
             }
