@@ -21,6 +21,7 @@ namespace Database
         public virtual DbSet<UserSign> UserSign { get; set; }
         public virtual DbSet<StudentDetails> StudentDetails { get; set; }
         public virtual DbSet<Department> Department { get; set; }
+       // public virtual DbSet<Designation> Designations { get; set; }
         public virtual DbSet<Native> Natives { get; set; }
         public virtual DbSet<Street> Streets { get; set; }
         public virtual DbSet<EmployeeManagement> EmployeeManagements { get; set; }
