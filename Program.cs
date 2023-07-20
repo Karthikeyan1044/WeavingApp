@@ -3,6 +3,9 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 //using Serilog;
 using Serilog.Formatting.Compact;
+using Microsoft.Extensions.Configuration;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+
 
 
 namespace Maja

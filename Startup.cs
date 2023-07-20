@@ -10,9 +10,11 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Module.Abstract;
 using Module.Repository;
+using Pomelo.EntityFrameworkCore.MySql.Storage;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using static Module.Service.StudentService;
 
 namespace Maja
@@ -48,10 +50,17 @@ namespace Maja
                      IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
                  };
              });
+            //string connectionString = Configuration.GetConnectionString("DefaultConnection");
+            //services.AddDbContext<DBcontext>(options =>
+            //{
+            //    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+            //});
 
+            //----------------need old DbContext------------------
             services.AddDbContext<DBcontext>(opts =>
             {
                 opts.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
+
             });
 
             services.AddTransient<IStudentService, StudentSevice>();
