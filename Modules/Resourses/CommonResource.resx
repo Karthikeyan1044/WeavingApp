@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BadRequest" xml:space="preserve">
+    <value>Bad Request</value>
+  </data>
+  <data name="DataFound" xml:space="preserve">
+    <value>Records Found</value>
+  </data>
+  <data name="DataInsert" xml:space="preserve">
+    <value>Record Inserted</value>
+  </data>
+  <data name="DataNotInsert" xml:space="preserve">
+    <value>Record Not Inserted</value>
+  </data>
+  <data name="DataUpdate" xml:space="preserve">
+    <value> Updated Successfully</value>
+  </data>
+  <data name="DataNotUpdate" xml:space="preserve">
+    <value>Record Not Updated</value>
+  </data>
+  <data name="DataDelete" xml:space="preserve">
+    <value>Record Deleted</value>
+  </data>
+  <data name="DataNotDelete" xml:space="preserve">
+    <value>Record Not Deleted</value>
+  </data>
+  <data name="DataNotFound" xml:space="preserve">
+    <value>Records Not Found</value>
+  </data>
+  <data name="DataExist" xml:space="preserve">
+    <value>Record Already Exist</value>
+  </data>
+  <data name="Forbidden" xml:space="preserve">
+    <value>Forbidden</value>
+  </data>
+  <data name="Internal_Server_Error" xml:space="preserve">
+    <value>Internal server error</value>
+  </data>
+  <data name="Password_Min_Requied" xml:space="preserve">
+    <value>Password length minimum 10 charecter allowed</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>Username is required</value>
+  </data>
+  <data name="OCRFileUploadType" xml:space="preserve">
+    <value>Please upload image file of type .jpg, .jpeg, .png or .gif</value>
+  </data>
+  <data name="LoginSuccessMsg" xml:space="preserve">
+    <value>Logged in Successfully</value>
+  </data>
+  <data name="LoginErrorMsg" xml:space="preserve">
+    <value>Incorrect Username or Password</value>
+  </data>
+  <data name="AadharExisting" xml:space="preserve">
+    <value>Customer Aadhar number already exists. Please enter a unique Aadhar number</value>
+  </data>
+  <data name="PanExisting" xml:space="preserve">
+    <value>Customer PAN number already exists. Please enter a unique PAN number</value>
+  </data>
+  <data name="CUSTOMER_DATA_UPDATED" xml:space="preserve">
+    <value>Customer Details Updated Successfully</value>
+  </data>
+  <data name="ApproveSuccess" xml:space="preserve">
+    <value>Approved Successfully</value>
+  </data>
+  <data name="CustIdNotFound" xml:space="preserve">
+    <value>No details found for the mentioned customer ID</value>
+  </data>
+  <data name="CustomerVoucherIdNotFound" xml:space="preserve">
+    <value>No details found for the mentioned Voucher ID</value>
+  </data>
+  <data name="VoucherIdNotFound" xml:space="preserve">
+    <value>No details found for the mentioned Voucher ID</value>
+  </data>
+  <data name="SavingAccountExists" xml:space="preserve">
+    <value>Savings Account already Exists for the Customer</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>Interest</value>
+  </data>
+  <data name="UnableTocreateAccount" xml:space="preserve">
+    <value>Unable to Create Account</value>
+  </data>
+  <data name="FileRequired" xml:space="preserve">
+    <value>Please upload required image files!</value>
+  </data>
+  <data name="CumulativeAccountExists" xml:space="preserve">
+    <value>CumulativeAccount already Exists for the Customer</value>
+  </data>
+  <data name="SavingsAccountCreated" xml:space="preserve">
+    <value>Savings Account Created successfully and Voucher created</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>19999</value>
+  </data>
+  <data name="CumulativeAccountCreated" xml:space="preserve">
+    <value>Cumulative Deposit Account Created Successfully &amp; Voucher Id Generated</value>
+  </data>
+  <data name="RecurringAccountCreated" xml:space="preserve">
+    <value>Recurring Deposit Account Created Successfully &amp; Voucher Id Generated</value>
+  </data>
+  <data name="RecurringAccountExists" xml:space="preserve">
+    <value>RecurringAccount already Exists for the Customer</value>
+  </data>
+  <data name="FDAccountCreated" xml:space="preserve">
+    <value>Fixed Deposit Account Created Successfully &amp; Voucher Id Generated</value>
+  </data>
+  <data name="FDAccountExists" xml:space="preserve">
+    <value>Fixed Deposit Account already Exists for the Customer</value>
+  </data>
+  <data name="CUSTOMER_DATA_DELETED" xml:space="preserve">
+    <value>Customer Details Deleted Successfully</value>
+  </data>
+  <data name="CUSTOMER_DATA_INSERTED" xml:space="preserve">
+    <value>Customer Details Created Successfully</value>
+  </data>
+  <data name="MinimumSavingsDepositAmount" xml:space="preserve">
+    <value>Deposit Amount is Lesser then Minimum Deposit Amount</value>
+  </data>
+  <data name="MaximumSavingsDepositAmount" xml:space="preserve">
+    <value>Deposit Amount is greater then Maximum Deposit Amount</value>
+  </data>
+  <data name="NomineeInserted" xml:space="preserve">
+    <value>Nominee Details Added Successfully</value>
+  </data>
+  <data name="NomineeNotFound" xml:space="preserve">
+    <value>Unable to found Nominee Details</value>
+  </data>
+  <data name="NomineeUpdated" xml:space="preserve">
+    <value>Nominee Details Updated Successfully</value>
+  </data>
+  <data name="MaximumCumulativeDepositAmount" xml:space="preserve">
+    <value>Maximum Deposit Amount for Cumulative Account is 10000</value>
+  </data>
+  <data name="MaximumFDDepositAmount" xml:space="preserve">
+    <value>Maximum Deposit Amount for Fixed Deposit Account is 100</value>
+  </data>
+  <data name="MaximumRecurringDepositAmount" xml:space="preserve">
+    <value>Maximum Deposit Amount for Recurring Deposit Account is 100</value>
+  </data>
+  <data name="MinimumCumulativeDepositAmount" xml:space="preserve">
+    <value>Minimum Deposit Amount for Cumulative Account is 100</value>
+  </data>
+  <data name="MinimumFDDepositAmount" xml:space="preserve">
+    <value>Minimum Deposit Amount for Fixed Deposit Account is 100</value>
+  </data>
+  <data name="MinimumRecurringDepositAmount" xml:space="preserve">
+    <value>Minimum Deposit Amount for Recurring Account is 100</value>
+  </data>
+  <data name="NomineeGuardianNotFound" xml:space="preserve">
+    <value>Unable to found Nominee Guardian Details</value>
+  </data>
+  <data name="NomineeGuardianNotUpdated" xml:space="preserve">
+    <value>Unable to Update Nominee Guardian Details</value>
+  </data>
+  <data name="shareNotExists" xml:space="preserve">
+    <value>Share Account need to create</value>
+  </data>
+  <data name="MaximumPaymentTypeAmount" xml:space="preserve">
+    <value>Deposit Amount is Greaterfor the Selected Payment type, Please select Diffrent Payment Type</value>
+  </data>
+  <data name="MinimumPaymentTypeAmount" xml:space="preserve">
+    <value>Deposit Amount is Lesser for the Selected Payment type</value>
+  </data>
+  <data name="DepositAmountNotEqaul" xml:space="preserve">
+    <value>Deposit Amount value is not equal</value>
+  </data>
+  <data name="UnableToGetData" xml:space="preserve">
+    <value>Unable to get data, Please try again</value>
+  </data>
+  <data name="SavingAccountNotExists" xml:space="preserve">
+    <value>Please Create minimum of One Savings or Special Savings Account</value>
+  </data>
+  <data name="ChequeAlreadyApproved" xml:space="preserve">
+    <value>Cheque Details Already Approved.</value>
+  </data>
+  <data name="ChequeInsert" xml:space="preserve">
+    <value>Cheque Details Added Successfully</value>
+  </data>
+  <data name="ChequeNotFound" xml:space="preserve">
+    <value>Cheque Details Not Found</value>
+  </data>
+  <data name="CustomerNotApproved" xml:space="preserve">
+    <value>Customer Not Approved, Please Update Customer First</value>
+  </data>
+  <data name="DeleteCheque" xml:space="preserve">
+    <value>Cheque Details Deleted Successfully</value>
+  </data>
+  <data name="MaximumTenShare" xml:space="preserve">
+    <value>Need More then Ten Share to create Deposit Acount</value>
+  </data>
+  <data name="MinimumOneShare" xml:space="preserve">
+    <value>Need More then One Share to create Deposit Acount</value>
+  </data>
+  <data name="SavingsAccountNotApproved" xml:space="preserve">
+    <value>Savings or Special Savings Not Approved, Please Approve the Same</value>
+  </data>
+  <data name="UnableToUpdateCheque" xml:space="preserve">
+    <value>Unable To Update Cheque Details</value>
+  </data>
+  <data name="UpdatedCheque" xml:space="preserve">
+    <value>Cheque Details Updated successfully</value>
+  </data>
+  <data name="JewelLoanAccountCreated" xml:space="preserve">
+    <value>Jewel Loan Account Created successfully and Voucher created</value>
+  </data>
+  <data name="AmountNotDebited" xml:space="preserve">
+    <value>Unable to Debit Amount, Please try again</value>
+  </data>
+  <data name="AmountNotMatching" xml:space="preserve">
+    <value>Deposit Amount Not Matching, Please Check and Try again</value>
+  </data>
+  <data name="ChequeDetailsNotFound" xml:space="preserve">
+    <value>Cheque Details Not Found</value>
+  </data>
+  <data name="DepositDetailsNotFoundForTransferAccount" xml:space="preserve">
+    <value>Transfer Account Details Not Found</value>
+  </data>
+  <data name="TransferAccountGreateThenAvailableAmount" xml:space="preserve">
+    <value>Transfer Amount is lesser then Closing Amount </value>
+  </data>
+  <data name="TransactionNotFound" xml:space="preserve">
+    <value>Transaction Details Not Found</value>
+  </data>
+  <data name="TranscationAdded" xml:space="preserve">
+    <value>Transcation Completed successfully and Voucher Id created</value>
+  </data>
+  <data name="KeyMoved" xml:space="preserve">
+    <value>Key Movement successfully Completed</value>
+  </data>
+  <data name="PreviousKeyNotFound" xml:space="preserve">
+    <value>Unable to Find Previous Key Holder details</value>
+  </data>
+  <data name="SavingsAccountNotApprovedForTransaction" xml:space="preserve">
+    <value>Savings or Special Savings Account Not Approved, Please Approve the Account for further processing the Transactions</value>
+  </data>
+  <data name="TransferAmountNotEqualToShareAmount" xml:space="preserve">
+    <value>Transfer Amount is Not Equal to Share Amount</value>
+  </data>
+  <data name="AttendanceAdded" xml:space="preserve">
+    <value>Attendance Added Successfully</value>
+  </data>
+  <data name="AttendanceNotAdded" xml:space="preserve">
+    <value>Unable Add Attendance</value>
+  </data>
+  <data name="AttendanceNotUpdated" xml:space="preserve">
+    <value>Unable to Login, Attendance Not Updated</value>
+  </data>
+  <data name="UpdatedChequeStatus" xml:space="preserve">
+    <value>Cheque Status Update successfully</value>
+  </data>
+  <data name="ChequeApproved" xml:space="preserve">
+    <value>Cheque Details Approved Successfully</value>
+  </data>
+  <data name="JewelLoanAmountExceed" xml:space="preserve">
+    <value>Jewel loan amount is exceed</value>
+  </data>
+</root>
