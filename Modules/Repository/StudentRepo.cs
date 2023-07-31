@@ -10,6 +10,7 @@ using Module.Abstract;
 using Module.StudentViewModule;
 using Newtonsoft.Json;
 using OfficeOpenXml;
+using Serilog.Core;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -88,7 +89,7 @@ namespace Module.Repository
         {
             try
             {
-                _logger.LogInformation("GetDepartment : Method Start");
+                _logger.LogInformation($"[{DateTime.Now}] GetDepartment : Method Start");
 
                 List<departments> Data = await _dbContext.Department.Where(l => l.isActive).Select(k => new departments { DepartmentID = k.Id, DepartmentName = k.DepartmentName }).ToListAsync();
 
@@ -99,7 +100,7 @@ namespace Module.Repository
                 };
 
                 _logger.LogInformation("GetDepartment Data Available.. ");
-                _logger.LogInformation("GetDepartment : Method End");
+                _logger.LogInformation($"[{DateTime.Now}] GetDepartment : Method End");
                 return new MessageViewModel(CommonResource.DataFound, true, string.Empty, Data);
 
             }

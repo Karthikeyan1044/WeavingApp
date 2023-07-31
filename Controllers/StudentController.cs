@@ -8,6 +8,7 @@ using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Module.Abstract;
 using Module.StudentViewModule;
+using System;
 using System.Threading.Tasks;
 
 namespace ApiCall.Controllers
@@ -61,7 +62,9 @@ namespace ApiCall.Controllers
         [HttpGet]
         public async Task<IActionResult> GetDepartment()
         {
-            Logger.LogInformation("GetDepartment :  Method Start");
+            // Logger.LogInformation("GetDepartment :  Method Start");
+            Logger.LogInformation($"[{DateTime.Now}] GetDepartment : Method Start");
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.BadRequest), false, StatusCodes.Status400BadRequest, null));
