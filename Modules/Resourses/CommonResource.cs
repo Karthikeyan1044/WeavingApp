@@ -11,6 +11,7 @@
         public const string DataDelete = nameof(DataDelete);
         public const string DataNotDelete = nameof(DataNotDelete);
         public const string DataExist = nameof(DataExist);
+        public const string UserNotExit = nameof(UserNotExit);
         public const string DataNotFound = nameof(DataNotFound);
         public const string BadRequest = nameof(BadRequest);
         public const string UsernameRequired = nameof(UsernameRequired);

@@ -38,7 +38,7 @@ namespace Module.Repository
         /// <summary>
         /// Get All Students Details
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns> 
         public async Task<MessageViewModel> GetAllStudent()
         {
             try
@@ -90,8 +90,12 @@ namespace Module.Repository
             try
             {
                 _logger.LogInformation($"[{DateTime.Now}] GetDepartment : Method Start");
-
-                List<departments> Data = await _dbContext.Department.Where(l => l.isActive).Select(k => new departments { DepartmentID = k.Id, DepartmentName = k.DepartmentName }).ToListAsync();
+                var Data = await _dbContext.Department.Where(l => l.isActive).Select(k => new 
+                {
+                   k.Id, 
+                   k.DepartmentName,
+                   k.isActive
+                }).ToListAsync();
 
                 if (Data.Count <= 0)
                 {
@@ -531,6 +535,7 @@ namespace Module.Repository
                 _logger.LogInformation("InsertUserDetails : Method Start");
 
                 UserDetails ud = new UserDetails();
+
                 if (listData.userDetailsVeiwmodel == null && listData.experience == null)
                 {
                     _logger.LogError("The User Already Exist");
@@ -595,7 +600,7 @@ namespace Module.Repository
                 if (sf == null)
                 {
                     _logger.LogError("The User Not Exist");
-                    return new MessageViewModel(CommonResource.DataNotFound, false);
+                    return new MessageViewModel(CommonResource.UserNotExit, false);
                 }
                     sf.isActive = false;
                     _dbContext.StudentDetails.Update(sf);
@@ -697,7 +702,7 @@ namespace Module.Repository
 
                 if (isExist)
                 {
-                    var sf = _dbContext.StudentDetails.FirstOrDefault(item => item.Id == details.StudentID);
+                    var sf =await _dbContext.StudentDetails.Where(item => item.Id == details.StudentID).FirstOrDefaultAsync();
                     if (sf != null)
                     {
                         sf.StudentName = details.StudentName;

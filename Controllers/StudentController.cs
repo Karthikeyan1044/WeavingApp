@@ -532,10 +532,10 @@ namespace ApiCall.Controllers
         public async Task<IActionResult> GetNativeDetails()
         {
             Logger.LogInformation("GetNativeDetails :  Method Start");
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.BadRequest), false, StatusCodes.Status400BadRequest, null));
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(new APIResponse(CommonResourceLocalizer.GetString(CommonResource.BadRequest), false, StatusCodes.Status400BadRequest, null));
+            //}
 
             var result = await _studentService.GetNativeDetails();
             Logger.LogInformation("GetNativeDetails : Method End");
